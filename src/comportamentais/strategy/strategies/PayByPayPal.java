@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * Strategy Concreto. implementa o metodo de pagamento PayPal.
  */
-public class PayByPayPal implements PayStrategy {
+public class PayByPayPal implements IPayStrategy {
     private static final Map<String, String> DATA_BASE = new HashMap<>();
     private final BufferedReader READER = new BufferedReader(new InputStreamReader(System.in));
     private String email;

@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 /**
  * Strategy concreto. Implementa o metodo de pagamento por cartão de credito
  */
-public class PayByCreditCard implements PayStrategy {
+public class PayByCreditCard implements IPayStrategy {
     private final BufferedReader READER = new BufferedReader(new InputStreamReader(System.in));
     private CreditCard card;
 

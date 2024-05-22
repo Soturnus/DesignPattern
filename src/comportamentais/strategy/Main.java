@@ -9,14 +9,14 @@ import java.util.Map;
 import comportamentais.strategy.order.Order;
 import comportamentais.strategy.strategies.PayByCreditCard;
 import comportamentais.strategy.strategies.PayByPayPal;
-import comportamentais.strategy.strategies.PayStrategy;
+import comportamentais.strategy.strategies.IPayStrategy;
 
 public class Main {
 	
-	 private static Map<Integer, Integer> priceOnProducts = new HashMap<>();
+	 	private static Map<Integer, Integer> priceOnProducts = new HashMap<>();
 	    private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	    private static Order order = new Order();
-	    private static PayStrategy strategy;
+	    private static IPayStrategy strategy;
 
 	    static {
 	        priceOnProducts.put(1, 2200);
@@ -31,24 +31,32 @@ public class Main {
 
 	            String continueChoice;
 	            do {
+	            	
 	                System.out.print("Selecione o produto:" + "\n" +
 	                        "1 - Placa Mãe" + "\n" +
 	                        "2 - CPU" + "\n" +
 	                        "3 - HDD" + "\n" +
 	                        "4 - Memória" + "\n");
+	                
 	                int choice = Integer.parseInt(reader.readLine());
 	                cost = priceOnProducts.get(choice);
+	                
 	                System.out.print("Quantidade: ");
 	                int count = Integer.parseInt(reader.readLine());
+	                
 	                order.setTotalCost(cost * count);
 	                System.out.print("Deseja continuar selecionando produtos? S/N: ");
+	                
 	                continueChoice = reader.readLine();
+	                
 	            } while (continueChoice.equalsIgnoreCase("S"));
 
 	            if (strategy == null) {
+	            	
 	                System.out.println("Selecione o metodo de pagamento:" + "\n" +
 	                        "1 - PalPay" + "\n" +
 	                        "2 - Cartão de Credito");
+	                
 	                String paymentMethod = reader.readLine();
 
 		            // O cliente cria diferentes estratégias com base na entrada do usuário,
