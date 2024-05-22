@@ -1,8 +1,6 @@
 package criacionais.builder;
 
-import criacionais.builder.builders.BuilderCaminhonete;
 import criacionais.builder.builders.BuilderCarro;
-import criacionais.builder.carros.Caminhonete;
 import criacionais.builder.carros.Carro;
 import criacionais.builder.diretor.Diretor;
 
